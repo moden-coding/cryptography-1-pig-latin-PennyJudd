@@ -4,14 +4,19 @@ public class PigLatin {
     // Move the first letter to the end, then add "ay".
     // Example: "hello" → "ellohay"
     public String pigLatinWord(String word) {
+        
 
+        char one = word.charAt(0);
+        String rest = word.substring(1);
+        String full = rest + one + "ay";
+        
         // TODO: grab the first letter using charAt(0)
 
         // TODO: grab the rest of the word using substring(1)
 
         // TODO: return rest + firstLetter + "ay"
 
-        return word; // replace this line with your answer
+        return full; // replace this line with your answer
     }
 
 
@@ -19,13 +24,35 @@ public class PigLatin {
     // Example: "hello world" → "ellohay orldway"
     public String pigLatinSentence(String sentence) {
 
+        String[] words = sentence.split(" ");
+        int i = 0;
+        String fullWord = "";
+        String all = "";
+       
+      
+        for(String word : words){
+            all += pigLatinWord(word) + " ";
+        }
+        // while (i < (words.length)){
+            
+        // // char one = words[i].charAt(0);
+        // // String rest = words[i].substring(1);
+        // // fullWord = rest + one + "ay" + " ";
+        // all = all + fullWord;
+        // i++;
+       
+         
+       
+
+         
+
         // TODO: split the sentence into an array of words using split(" ")
 
         // TODO: loop through the array and call pigLatinWord on each word
 
         // TODO: put the words back together with spaces between them
 
-        return sentence; // replace this line with your answer
+        return all; // replace this line with your answer
     }
 
 
